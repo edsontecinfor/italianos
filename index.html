@@ -127,7 +127,14 @@ body{background:#fff}
 
 <div class="section">
 <h3>Pedido</h3>
+
 <div id="view_pedido">-</div>
+
+<br>
+
+<div class="label">Observação</div>
+<div id="view_observacao">-</div>
+
 </div>
 
 <div class="footer">
@@ -157,7 +164,8 @@ telefone:p.get('telefone')||'',
 entrega:p.get('entrega')||'',
 bairro:p.get('bairro')||'',
 endereco:p.get('endereco')||'',
-pedido:p.get('pedido')||''
+pedido:p.get('pedido')||'',
+observacao:p.get('observacao')||''
 };
 }
 
@@ -174,5 +182,14 @@ setText('view_entrega',d.entrega);
 setText('view_bairro',d.bairro);
 setText('view_endereco',d.endereco);
 setText('view_pedido',d.pedido);
+setText('view_observacao',d.observacao);
 
-document.getElementById('view_numero_pedido').textContent=ger
+document.getElementById('view_numero_pedido').textContent=gerarNumeroPedido();
+document.getElementById('view_datahora').textContent=new Date().toLocaleDateString('pt-BR');
+}
+
+init();
+</script>
+
+</body>
+</html>
