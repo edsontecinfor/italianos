@@ -76,6 +76,17 @@ padding:1px 0;
 
 .label{font-weight:700}
 
+.value{
+white-space:pre-wrap;
+word-break:break-word;
+}
+
+.observacao-box{
+margin-top:8px;
+padding-top:5px;
+border-top:1px dotted #000;
+}
+
 .footer{
 text-align:center;
 font-size:9px;
@@ -117,24 +128,22 @@ body{background:#fff}
 <div class="section">
 <h3>Cliente</h3>
 
-<div class="row"><div class="label">Nome</div><div id="view_nome">-</div></div>
-<div class="row"><div class="label">Telefone</div><div id="view_telefone">-</div></div>
-<div class="row"><div class="label">Entrega</div><div id="view_entrega">-</div></div>
-<div class="row"><div class="label">Bairro</div><div id="view_bairro">-</div></div>
-<div class="row"><div class="label">Endereço</div><div id="view_endereco">-</div></div>
+<div class="row"><div class="label">Nome</div><div class="value" id="view_nome">-</div></div>
+<div class="row"><div class="label">Telefone</div><div class="value" id="view_telefone">-</div></div>
+<div class="row"><div class="label">Entrega</div><div class="value" id="view_entrega">-</div></div>
+<div class="row"><div class="label">Bairro</div><div class="value" id="view_bairro">-</div></div>
+<div class="row"><div class="label">Endereço</div><div class="value" id="view_endereco">-</div></div>
 
 </div>
 
 <div class="section">
 <h3>Pedido</h3>
+<div class="value" id="view_pedido">-</div>
 
-<div id="view_pedido">-</div>
-
-<br>
-
-<div class="label">Observação</div>
-<div id="view_observacao">-</div>
-
+<div class="observacao-box">
+  <div class="label">Observação</div>
+  <div class="value" id="view_observacao">-</div>
+</div>
 </div>
 
 <div class="footer">
@@ -165,7 +174,7 @@ entrega:p.get('entrega')||'',
 bairro:p.get('bairro')||'',
 endereco:p.get('endereco')||'',
 pedido:p.get('pedido')||'',
-observacao:p.get('observacao')||''
+observacao:p.get('observacao')||p.get('observacoes')||p.get('obs')||''
 };
 }
 
